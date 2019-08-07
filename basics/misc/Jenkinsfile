@@ -11,7 +11,7 @@ node {
      nodejs(nodeJSInstallationName: 'Node11101') {
         sh 'ls'
        sh 'cd ./basics'
-       sh 'npm install --only=dev'
+       sh 'npm install --only=dev && cd ./basics'
        sh 'npm test'
      }
    }
