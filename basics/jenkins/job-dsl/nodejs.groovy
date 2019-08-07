@@ -39,7 +39,7 @@ job('NodeJS Docker example') {
             forceTag(false)
             createFingerprints(false)
             skipDecorate()
-            buildContext('./basics)
+            buildContext('./basics')
         }
     }
 }
