@@ -80,7 +80,7 @@ pipelineJob('pipeline-boilerplate-advanced'){
                 git{
                     remote {url(repo)}
                     branches('master', '**/feature*')
-                    scriptPath('./basics/misc/Jenkinsfile2')
+                    scriptPath('./basics/misc/Jenkinsfile.v2')
                     extensions{}
                     
             }
