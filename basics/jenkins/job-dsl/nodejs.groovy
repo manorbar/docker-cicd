@@ -46,7 +46,7 @@ job('NodeJS Docker example') {
 
     
 pipelineJob('pipeline-boilerplate'){
-    def repo = 'https://github.com/jenkinsci/job-dsl-plugin.git'
+    def repo = 'git://github.com/manorbar/docker-cicd.git'
     
         triggers {
         scm('H/5 * * * *')
