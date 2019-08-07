@@ -65,3 +65,26 @@ pipelineJob('pipeline-boilerplate'){
         }
     }
 }
+}
+pipelineJob('pipeline-boilerplate'){
+    def repo = 'https://github.com/jenkinsci/job-dsl-plugin.git'
+    
+        triggers {
+        scm('H/5 * * * *')
+    }
+    description("pipeline example")
+        definition {
+        cpsScm {
+            scm {
+                git{
+                    remote {url(repo)}
+                    branches('master', '**/feature*')
+                    scriptPath('./basics/misc/jenkinsfile')
+                    extensions{}
+                    
+            }
+        }
+    }
+}
+}
+
