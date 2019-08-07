@@ -67,3 +67,25 @@ pipelineJob('pipeline-boilerplate'){
 }
 }
 
+pipelineJob('pipeline-boilerplate-advanced'){
+    def repo = 'https://github.com/manorbar/docker-cicd.git'
+    
+        triggers {
+        scm('H/5 * * * *')
+    }
+    description("pipeline advanced example")
+        definition {
+        cpsScm {
+            scm {
+                git{
+                    remote {url(repo)}
+                    branches('master', '**/feature*')
+                    scriptPath('./basics/misc/Jenkinsfile2')
+                    extensions{}
+                    
+            }
+        }
+    }
+}
+}
+
