@@ -32,6 +32,7 @@ job('NodeJS Docker example') {
     }
     steps {
         dockerBuildAndPublish {
+            buildContext('./basics')
             repositoryName('manorbar/docker-cicd') //qa / dev
             tag('${GIT_REVISION,length=9}')
             registryCredentials('manorbar')
@@ -39,7 +40,6 @@ job('NodeJS Docker example') {
             forceTag(false)
             createFingerprints(false)
             skipDecorate()
-            buildContext('./basics')
         }
     }
 }
