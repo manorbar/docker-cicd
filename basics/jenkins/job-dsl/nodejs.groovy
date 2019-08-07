@@ -32,9 +32,9 @@ job('NodeJS Docker example') {
     }
     steps {
         dockerBuildAndPublish {
-            repositoryName('yanivomc/docker-nodejs-demo') //qa / dev
+            repositoryName('manorbar/docker-cicd') //qa / dev
             tag('${GIT_REVISION,length=9}')
-            registryCredentials('dockerhub')
+            registryCredentials('manorbar')
             forcePull(false)
             forceTag(false)
             createFingerprints(false)
